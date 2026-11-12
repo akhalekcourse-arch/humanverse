@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HUMANVERSE — Interactive educational platform exploring human biology, anatomy, biochemistry, and body systems for students and future medical professionals.">
-  <meta name="keywords" content="human anatomy, biology, biochemistry, body systems, education">
-  <title>HUMANVERSE — Explore the Human Body</title>
+  <meta name="description" content="HUMANVERSE — International educational platform explaining human anatomy, physiology, cellular biology and biochemistry through evidence-based resources.">
+  <meta name="keywords" content="human anatomy, physiology, biochemistry, biology education, medical education">
+  <title>HUMANVERSE — The Human Body, Explained Through Science</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="logo">HUMANVERSE</div>
+    <div class="logo"><img src="logo.jpg" alt="HUMANVERSE logo" style="height:40px;vertical-align:middle;margin-right:8px;"> HUMANVERSE</div>
     <nav>
       <a href="index.html" class="active">Home</a>
       <a href="systems.html">Systems</a>
@@ -20,16 +20,21 @@
       <a href="quiz.html">Quiz</a>
       <a href="journal.html">Journal</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
     </nav>
     <button class="theme-toggle" onclick="toggleTheme()">Light</button>
   </header>
 
-  <section class="hero">
-    <h1>HUMANVERSE</h1>
-    <p>Scientific project · Explore. Understand. Discover.</p>
-    <p>An interactive educational platform dedicated to the science of the human body. Learn how systems work, how organs function, and the chemistry that sustains life.</p>
-    <a href="explorer.html" class="btn">Explore the Human Body</a>
-    <a href="systems.html" class="btn btn-outline">View Body Systems</a>
+  <section class="hero" style="display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;text-align:left;padding:4rem 2rem;">
+    <div style="max-width:520px;">
+      <h1 style="font-size:2.8rem;line-height:1.15;background:none;-webkit-text-fill-color:var(--text);">THE HUMAN BODY,<br>EXPLAINED THROUGH SCIENCE.</h1>
+      <p style="font-size:1.2rem;margin:1.2rem 0;">Explore human anatomy, physiology, cellular biology and biochemistry through evidence-based educational resources and interactive learning experiences.</p>
+      <a href="systems.html" class="btn">Explore Body Systems</a>
+      <a href="explorer.html" class="btn btn-outline">Anatomy Explorer</a>
+    </div>
+    <div>
+      <img src="hero-anatomy.jpg" alt="Anatomical illustration of the human body showing major organs" style="max-width:320px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.4);">
+    </div>
   </section>
 
   <section class="section">
@@ -37,23 +42,23 @@
     <div class="grid">
       <div class="card">
         <h3>Body Systems</h3>
-        <p>Study all 11 major systems with structure, functions, key organs, and scientific facts.</p>
-        <a href="systems.html">Learn more →</a>
+        <p>All 11 major systems with structured overview, anatomy, functions, cellular and biochemical aspects, and scientific references.</p>
+        <a href="systems.html">View systems →</a>
       </div>
       <div class="card">
         <h3>Anatomy Explorer</h3>
-        <p>Interactive SVG map. Click organs or search by name to see structure and function.</p>
-        <a href="explorer.html">Explore →</a>
+        <p>Interactive 2D organ map with search. Select organs to view structure and function. (3D viewer planned.)</p>
+        <a href="explorer.html">Open explorer →</a>
       </div>
       <div class="card">
         <h3>Biochemistry</h3>
-        <p>Proteins, DNA, ATP, enzymes, hormones, and cellular energy pathways.</p>
-        <a href="biochemistry.html">Discover →</a>
+        <p>Molecular biology, metabolism, enzymes, cellular energy, and nutrition — with accurate scientific context.</p>
+        <a href="biochemistry.html">Study biochemistry →</a>
       </div>
       <div class="card">
         <h3>Research Lab</h3>
-        <p>Original literature-based research with questions, methodology, and references.</p>
-        <a href="research.html">View research →</a>
+        <p>Literature-based research articles following full academic structure with clear limitations and references.</p>
+        <a href="research.html">Read research →</a>
       </div>
     </div>
   </section>
@@ -62,32 +67,33 @@
     <h2>Featured Research</h2>
     <div class="grid">
       <div class="card">
-        <h3>The Chemistry of Human Bones</h3>
-        <p>Hydroxyapatite, collagen type I, and the process of bone mineralization.</p>
-        <a href="research.html">Read article →</a>
+        <h3>Chemistry of Human Bones</h3>
+        <p>Hydroxyapatite, collagen type I, and regulated mineralization processes.</p>
+        <a href="research.html">Read full article →</a>
       </div>
       <div class="card">
-        <h3>How Blood Transports Oxygen</h3>
-        <p>Hemoglobin structure, oxygen binding curve, and gas exchange mechanics.</p>
-        <a href="research.html">Read article →</a>
+        <h3>Oxygen Transport by Blood</h3>
+        <p>Hemoglobin structure, cooperative binding, and the Bohr effect.</p>
+        <a href="research.html">Read full article →</a>
       </div>
       <div class="card">
-        <h3>The Energy of Life</h3>
-        <p>Mitochondria, oxidative phosphorylation, and ATP synthesis.</p>
-        <a href="research.html">Read article →</a>
+        <h3>Cellular Energy: ATP</h3>
+        <p>Mitochondrial oxidative phosphorylation and ATP yield from glucose.</p>
+        <a href="research.html">Read full article →</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>HUMANVERSE — Scientific Educational Project</p>
+    <p><strong>HUMANVERSE</strong> — International Educational Platform on Human Biology & Biochemistry</p>
     <p>
       <a href="about.html">About</a>
-      <a href="journal.html">Science Journal</a>
-      <a href="quiz.html">Knowledge Test</a>
-      <a href="https://github.com/akhalekcourse-arch/humanverse" target="_blank">GitHub</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="journal.html">Journal</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="https://github.com/akhalekcourse-arch/humanverse" target="_blank" rel="noopener">GitHub</a>
     </p>
-    <p style="margin-top:0.6rem;font-size:0.8rem;">Educational content only. Not medical advice. Sources: NCBI, OpenStax, MedlinePlus.</p>
+    <p style="margin-top:0.8rem;font-size:0.8rem;">Educational content only. Not medical advice. Sources include NCBI Bookshelf, OpenStax, and peer-reviewed literature. Image credits on respective pages.</p>
   </footer>
 
   <script>

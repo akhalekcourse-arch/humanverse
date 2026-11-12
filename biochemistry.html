@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Biochemistry of life — proteins, DNA, ATP, enzymes, hormones, and cellular energy.">
+  <meta name="description" content="Biochemistry — molecular biology, metabolism, enzymes, cellular energy, and human chemistry.">
   <title>Biochemistry — HUMANVERSE</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="logo">HUMANVERSE</div>
+    <div class="logo"><img src="logo.jpg" alt="HUMANVERSE logo" style="height:36px;vertical-align:middle;margin-right:6px;"> HUMANVERSE</div>
     <nav>
       <a href="index.html">Home</a>
       <a href="systems.html">Systems</a>
@@ -19,57 +19,57 @@
       <a href="quiz.html">Quiz</a>
       <a href="journal.html">Journal</a>
       <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
     </nav>
     <button class="theme-toggle" onclick="toggleTheme()">Light</button>
   </header>
 
   <section class="hero">
     <h1>Biochemistry</h1>
-    <p>The chemistry of life — molecules and reactions that sustain the human body.</p>
+    <p>Molecular foundations of life: DNA, proteins, metabolism, enzymes, and cellular energy.</p>
   </section>
 
   <section class="section">
-    <div class="grid">
-      <div class="card">
-        <h3>Proteins</h3>
-        <p>Polymers of amino acids. Functions: enzymes, structural support (collagen), transport (hemoglobin), signaling, immune defense. Folding determines function.</p>
-      </div>
-      <div class="card">
-        <h3>Carbohydrates</h3>
-        <p>Primary energy source. Glucose is metabolized via glycolysis and the citric acid cycle. Glycogen is the storage form in liver and muscle.</p>
-      </div>
-      <div class="card">
-        <h3>Lipids</h3>
-        <p>Fats, phospholipids, steroids. Energy storage, cell membrane structure, hormone precursors (steroid hormones), insulation.</p>
-      </div>
-      <div class="card">
-        <h3>DNA & RNA</h3>
-        <p>DNA stores genetic information in the nucleus. RNA (mRNA, tRNA, rRNA) carries instructions and participates in protein synthesis (transcription and translation).</p>
-      </div>
-      <div class="card">
-        <h3>Enzymes</h3>
-        <p>Biological catalysts that lower activation energy. Highly specific. Activity regulated by pH, temperature, inhibitors, and allosteric effectors.</p>
-      </div>
-      <div class="card">
-        <h3>Hormones</h3>
-        <p>Chemical messengers (peptide, steroid, amine). Produced by endocrine glands. Regulate metabolism, growth, reproduction, and stress responses.</p>
-      </div>
-      <div class="card">
-        <h3>ATP & Cellular Energy</h3>
-        <p>Adenosine triphosphate is the universal energy currency. Produced mainly by oxidative phosphorylation in mitochondria. Hydrolysis powers cellular work.</p>
-      </div>
-      <div class="card">
-        <h3>Vitamins & Minerals</h3>
-        <p>Essential micronutrients. Vitamins act as coenzymes; minerals (Ca, Fe, Na, K, Mg) serve structural and catalytic roles.</p>
-      </div>
-      <div class="card">
-        <h3>Cellular Respiration</h3>
-        <p>Process converting glucose + O₂ into CO₂, H₂O, and ATP. Stages: glycolysis, pyruvate oxidation, citric acid cycle, electron transport chain.</p>
-      </div>
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Molecular Biology — DNA, RNA, Proteins</h3>
+      <p>DNA stores genetic information as a double helix of nucleotides (A-T, G-C). Transcription produces mRNA; translation at ribosomes synthesizes proteins from mRNA codons. Proteins fold into functional 3D structures determined by amino acid sequence.</p>
+      <p><strong>Key processes:</strong> Replication, transcription, translation, post-translational modification.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Metabolism — Glycolysis & Krebs Cycle</h3>
+      <p>Glycolysis (cytosol): glucose → 2 pyruvate + net 2 ATP + 2 NADH. Under aerobic conditions, pyruvate enters mitochondria, is converted to acetyl-CoA, and enters the citric acid (Krebs) cycle, producing NADH, FADH₂, and CO₂.</p>
+      <p>Complete aerobic oxidation of one glucose molecule yields approximately 30–32 ATP.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Enzymology</h3>
+      <p>Enzymes are biological catalysts (mostly proteins) that lower activation energy. They are specific, saturable, and regulated by inhibitors, allosteric effectors, pH, and temperature. Examples: hexokinase, pyruvate dehydrogenase, ATP synthase.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Human Chemistry — pH, Ions, Electrolytes</h3>
+      <p>Blood pH is tightly regulated (~7.35–7.45). Major ions: Na⁺, K⁺, Ca²⁺, Cl⁻, HCO₃⁻. Electrolyte balance is maintained by kidneys, hormones (aldosterone, ADH, PTH), and respiratory compensation.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Nutrition — Vitamins & Minerals</h3>
+      <p>Vitamins act as coenzymes or antioxidants (e.g., B vitamins, vitamin C, vitamin D). Minerals (Ca, Fe, I, Zn, Mg) serve structural, catalytic, or signaling roles. Deficiencies produce characteristic clinical syndromes.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Cell Biology — Organelles & Membranes</h3>
+      <p>Plasma membrane: phospholipid bilayer with embedded proteins. Mitochondria: ATP production. Endoplasmic reticulum and Golgi: protein/lipid processing and trafficking. Lysosomes: degradation. Nucleus: genetic control.</p>
+    </div>
+
+    <div class="card">
+      <h3>ATP & Cellular Energy</h3>
+      <p>ATP is the primary energy currency. Produced mainly by oxidative phosphorylation in mitochondria: electron transport chain creates proton gradient; ATP synthase uses proton flow to phosphorylate ADP. Oxygen is the final electron acceptor.</p>
+      <p>Formula note: ATP ⇌ ADP + Pᵢ + energy (hydrolysis releases ~30.5 kJ/mol under standard conditions; physiological free energy is higher).</p>
     </div>
   </section>
 
-  <footer><p>HUMANVERSE — Biochemistry of Life</p></footer>
+  <footer><p>HUMANVERSE — Biochemistry. Content aligned with standard university-level resources (OpenStax Biology/Biochemistry, NCBI). Educational use only.</p></footer>
   <script>
     function toggleTheme() {
       const html = document.documentElement;
