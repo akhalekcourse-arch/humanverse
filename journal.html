@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HUMANVERSE Science Journal — short scientific articles and summaries.">
+  <title>Science Journal — HUMANVERSE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">HUMANVERSE</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="systems.html">Systems</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="biochemistry.html">Biochemistry</a>
+      <a href="research.html">Research Lab</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="journal.html" class="active">Journal</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+  </header>
+
+  <section class="hero">
+    <h1>Science Journal</h1>
+    <p>Short educational articles and research summaries. All content is literature-based and educational.</p>
+  </section>
+
+  <section class="section">
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Why the Heart Never Rests</h3>
+      <p><strong>Author:</strong> HUMANVERSE Research Team · <strong>Date:</strong> November 2026</p>
+      <p>The heart beats approximately 100,000 times per day. Unlike skeletal muscle, cardiac muscle is involuntary and highly resistant to fatigue due to its rich mitochondrial content and continuous blood supply via coronary arteries. The sinoatrial node generates the electrical impulse that initiates each contraction.</p>
+      <p><strong>Source:</strong> OpenStax Anatomy & Physiology, Chapter on Cardiovascular System.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Bone Remodeling: A Lifelong Process</h3>
+      <p><strong>Author:</strong> HUMANVERSE Research Team · <strong>Date:</strong> November 2026</p>
+      <p>Even after growth stops, bone tissue is continuously remodeled. Osteoclasts resorb old bone while osteoblasts deposit new matrix. This process maintains bone strength and regulates calcium levels. Weight-bearing exercise and adequate vitamin D and calcium support healthy remodeling.</p>
+      <p><strong>Source:</strong> NCBI Bookshelf — Bone Physiology.</p>
+    </div>
+
+    <div class="card">
+      <h3>ATP: More Than Just Energy</h3>
+      <p><strong>Author:</strong> HUMANVERSE Research Team · <strong>Date:</strong> November 2026</p>
+      <p>While best known as the cell’s energy currency, ATP also serves as a signaling molecule and a substrate for RNA synthesis. The body recycles its entire ATP pool roughly every minute under resting conditions. Mitochondrial dysfunction is linked to many metabolic disorders.</p>
+      <p><strong>Source:</strong> Standard biochemistry references (Lehninger, OpenStax).</p>
+    </div>
+  </section>
+
+  <footer><p>HUMANVERSE — Science Journal</p></footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      if (html.dataset.theme === 'light') { html.dataset.theme = 'dark'; btn.textContent = 'Light'; }
+      else { html.dataset.theme = 'light'; btn.textContent = 'Dark'; }
+    }
+  </script>
+</body>
+</html>

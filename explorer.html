@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Interactive Anatomy Explorer — click organs or search by name to learn structure and function.">
   <title>Anatomy Explorer — HUMANVERSE</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,22 +12,28 @@
     <div class="logo">HUMANVERSE</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="systems.html">Body Systems</a>
-      <a href="explorer.html" class="active">Anatomy Explorer</a>
+      <a href="systems.html">Systems</a>
+      <a href="explorer.html" class="active">Explorer</a>
       <a href="biochemistry.html">Biochemistry</a>
+      <a href="research.html">Research Lab</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="journal.html">Journal</a>
       <a href="about.html">About</a>
     </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
   </header>
 
   <section class="hero">
     <h1>Anatomy Explorer</h1>
-    <p>Click on organs to explore their structure and function.</p>
+    <p>Click on organs or use the search box to explore structure and function.</p>
   </section>
 
   <section class="section">
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Search organ (e.g. heart, liver, kidney)..." oninput="searchOrgan()">
+    </div>
     <div class="body-container">
       <svg id="human-svg" viewBox="0 0 200 400" xmlns="http://www.w3.org/2000/svg">
-        <!-- Simplified front view body -->
         <path id="head" d="M80 20 Q100 10 120 20 L120 50 Q100 60 80 50 Z" data-name="Brain / Head"/>
         <path id="heart" d="M90 90 Q100 80 110 90 L115 110 Q100 125 85 110 Z" data-name="Heart"/>
         <path id="lungs" d="M70 85 Q60 100 65 120 L90 115 L90 85 Z M110 85 L110 115 L135 120 Q140 100 130 85 Z" data-name="Lungs"/>
@@ -34,40 +41,59 @@
         <path id="stomach" d="M105 135 L125 140 L120 160 L100 155 Z" data-name="Stomach"/>
         <path id="intestines" d="M75 160 L125 160 L120 200 L80 200 Z" data-name="Intestines"/>
         <path id="kidneys" d="M70 170 L85 170 L85 190 L70 190 Z M115 170 L130 170 L130 190 L115 190 Z" data-name="Kidneys"/>
-        <!-- Body outline -->
         <path d="M60 60 L140 60 L145 90 L150 200 L140 350 L120 380 L80 380 L60 350 L50 200 L55 90 Z" fill="none" stroke="#A7B2C2" stroke-width="2"/>
       </svg>
       <div class="info-panel" id="info">
         <h3>Select an organ</h3>
-        <p>Click on a highlighted area of the body to view information about structure, location, and function.</p>
+        <p>Click a highlighted area or type an organ name in the search box.</p>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>HUMANVERSE — Interactive Anatomy (SVG prototype)</p>
-  </footer>
+  <footer><p>HUMANVERSE — Interactive Anatomy (SVG prototype)</p></footer>
 
   <script>
     const organs = {
-      head: { title: "Brain / Head", text: "The brain is the control center of the nervous system. It processes sensory information, regulates body functions, and enables consciousness and thought." },
-      heart: { title: "Heart", text: "A muscular organ that pumps blood through the cardiovascular system. It has four chambers and maintains circulation of oxygenated and deoxygenated blood." },
-      lungs: { title: "Lungs", text: "Primary organs of the respiratory system. They facilitate gas exchange: oxygen enters the blood, carbon dioxide is removed." },
-      liver: { title: "Liver", text: "Largest internal organ. Detoxifies blood, produces bile, stores glycogen, and synthesizes important proteins." },
-      stomach: { title: "Stomach", text: "Muscular sac that mixes food with gastric juices, beginning protein digestion." },
-      intestines: { title: "Intestines", text: "Small and large intestines complete digestion and absorb nutrients and water." },
-      kidneys: { title: "Kidneys", text: "Filter blood, remove waste, and regulate fluid and electrolyte balance." }
+      head: { title: "Brain / Head", text: "The brain is the control center of the nervous system. It processes sensory information, regulates body functions, and enables consciousness, thought, and memory. Protected by the skull and meninges." },
+      heart: { title: "Heart", text: "Muscular organ of the cardiovascular system. Four chambers (two atria, two ventricles). Pumps oxygenated blood to the body and deoxygenated blood to the lungs. Average rate ~70 bpm at rest." },
+      lungs: { title: "Lungs", text: "Primary organs of respiration. Contain millions of alveoli where gas exchange occurs. Oxygen diffuses into blood; carbon dioxide is exhaled." },
+      liver: { title: "Liver", text: "Largest internal organ. Detoxifies blood, produces bile for fat digestion, stores glycogen, synthesizes plasma proteins, and metabolizes nutrients." },
+      stomach: { title: "Stomach", text: "Muscular sac that stores and mixes food with gastric juices (HCl + pepsin). Begins protein digestion. Produces intrinsic factor for vitamin B12 absorption." },
+      intestines: { title: "Intestines", text: "Small intestine: main site of digestion and nutrient absorption. Large intestine: absorbs water and forms feces. Together ~7–8 meters long." },
+      kidneys: { title: "Kidneys", text: "Paired organs that filter ~180 liters of blood daily. Remove waste (urea), regulate fluid, electrolyte, and acid-base balance. Produce urine." }
     };
 
+    function showOrgan(id) {
+      document.querySelectorAll('#human-svg path').forEach(p => p.classList.remove('active'));
+      const path = document.getElementById(id);
+      if (path) path.classList.add('active');
+      const info = organs[id] || { title: "Unknown", text: "No detailed information available." };
+      document.getElementById('info').innerHTML = `<h3>${info.title}</h3><p>${info.text}</p>`;
+    }
+
     document.querySelectorAll('#human-svg path[id]').forEach(path => {
-      path.addEventListener('click', () => {
-        document.querySelectorAll('#human-svg path').forEach(p => p.classList.remove('active'));
-        path.classList.add('active');
-        const id = path.id;
-        const info = organs[id] || { title: path.dataset.name, text: "Detailed information coming soon." };
-        document.getElementById('info').innerHTML = `<h3>${info.title}</h3><p>${info.text}</p>`;
-      });
+      path.addEventListener('click', () => showOrgan(path.id));
     });
+
+    function searchOrgan() {
+      const q = document.getElementById('search').value.toLowerCase().trim();
+      if (!q) return;
+      const map = { brain: 'head', head: 'head', heart: 'heart', lung: 'lungs', lungs: 'lungs', liver: 'liver', stomach: 'stomach', intestine: 'intestines', intestines: 'intestines', kidney: 'kidneys', kidneys: 'kidneys' };
+      for (const [key, id] of Object.entries(map)) {
+        if (key.includes(q) || q.includes(key)) {
+          showOrgan(id);
+          return;
+        }
+      }
+      document.getElementById('info').innerHTML = `<h3>Not found</h3><p>No organ matched "${q}". Try: heart, lungs, liver, stomach, kidneys.</p>`;
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      if (html.dataset.theme === 'light') { html.dataset.theme = 'dark'; btn.textContent = 'Light'; }
+      else { html.dataset.theme = 'light'; btn.textContent = 'Dark'; }
+    }
   </script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Human Body Systems — detailed overview of all 11 major systems with anatomy, functions, and key organs.">
   <title>Body Systems — HUMANVERSE</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,11 +12,15 @@
     <div class="logo">HUMANVERSE</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="systems.html" class="active">Body Systems</a>
-      <a href="explorer.html">Anatomy Explorer</a>
+      <a href="systems.html" class="active">Systems</a>
+      <a href="explorer.html">Explorer</a>
       <a href="biochemistry.html">Biochemistry</a>
+      <a href="research.html">Research Lab</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="journal.html">Journal</a>
       <a href="about.html">About</a>
     </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
   </header>
 
   <section class="hero">
@@ -27,47 +32,69 @@
     <div class="grid">
       <div class="card">
         <h3>Skeletal System</h3>
-        <p>Provides structure, protects organs, and enables movement through joints. Composed of 206 bones in adults.</p>
+        <p><strong>Anatomy:</strong> 206 bones in adults, cartilage, ligaments.<br>
+        <strong>Functions:</strong> Support, protection, movement, mineral storage, blood cell production.<br>
+        <strong>Key organs:</strong> Skull, vertebrae, femur, ribs.</p>
       </div>
       <div class="card">
         <h3>Muscular System</h3>
-        <p>Enables movement, maintains posture, and generates heat. Includes skeletal, smooth, and cardiac muscle.</p>
+        <p><strong>Anatomy:</strong> Skeletal, smooth, and cardiac muscle tissue.<br>
+        <strong>Functions:</strong> Movement, posture, heat production.<br>
+        <strong>Key organs:</strong> Biceps, diaphragm, heart muscle.</p>
       </div>
       <div class="card">
         <h3>Nervous System</h3>
-        <p>Coordinates responses, processes information, and controls voluntary and involuntary actions.</p>
+        <p><strong>Anatomy:</strong> Brain, spinal cord, peripheral nerves.<br>
+        <strong>Functions:</strong> Sensory processing, motor control, cognition.<br>
+        <strong>Key organs:</strong> Cerebrum, cerebellum, spinal cord.</p>
       </div>
       <div class="card">
         <h3>Cardiovascular System</h3>
-        <p>Transports blood, nutrients, gases, and wastes via the heart and blood vessels.</p>
+        <p><strong>Anatomy:</strong> Heart, arteries, veins, capillaries.<br>
+        <strong>Functions:</strong> Transport of blood, oxygen, nutrients, waste.<br>
+        <strong>Key organs:</strong> Heart (4 chambers).</p>
       </div>
       <div class="card">
         <h3>Respiratory System</h3>
-        <p>Facilitates gas exchange — oxygen in, carbon dioxide out — through the lungs and airways.</p>
+        <p><strong>Anatomy:</strong> Nasal cavity, trachea, bronchi, lungs, alveoli.<br>
+        <strong>Functions:</strong> Gas exchange (O₂ in, CO₂ out).<br>
+        <strong>Key organs:</strong> Lungs.</p>
       </div>
       <div class="card">
         <h3>Digestive System</h3>
-        <p>Breaks down food into nutrients that can be absorbed and used by cells.</p>
+        <p><strong>Anatomy:</strong> Mouth to anus, liver, pancreas, gallbladder.<br>
+        <strong>Functions:</strong> Ingestion, digestion, absorption, elimination.<br>
+        <strong>Key organs:</strong> Stomach, small intestine, liver.</p>
       </div>
       <div class="card">
         <h3>Endocrine System</h3>
-        <p>Regulates body functions through hormones produced by glands.</p>
+        <p><strong>Anatomy:</strong> Glands that secrete hormones into blood.<br>
+        <strong>Functions:</strong> Regulation of growth, metabolism, reproduction.<br>
+        <strong>Key organs:</strong> Pituitary, thyroid, adrenal, pancreas.</p>
       </div>
       <div class="card">
         <h3>Urinary System</h3>
-        <p>Removes waste and maintains fluid and electrolyte balance via the kidneys.</p>
+        <p><strong>Anatomy:</strong> Kidneys, ureters, bladder, urethra.<br>
+        <strong>Functions:</strong> Waste removal, fluid and electrolyte balance.<br>
+        <strong>Key organs:</strong> Kidneys.</p>
       </div>
       <div class="card">
         <h3>Immune & Lymphatic</h3>
-        <p>Defends against pathogens and returns interstitial fluid to the bloodstream.</p>
+        <p><strong>Anatomy:</strong> Lymph nodes, spleen, thymus, white blood cells.<br>
+        <strong>Functions:</strong> Defense against pathogens, fluid return.<br>
+        <strong>Key organs:</strong> Spleen, lymph nodes.</p>
       </div>
       <div class="card">
         <h3>Integumentary System</h3>
-        <p>Skin, hair, and nails — protects the body and regulates temperature.</p>
+        <p><strong>Anatomy:</strong> Skin (epidermis, dermis), hair, nails, glands.<br>
+        <strong>Functions:</strong> Protection, temperature regulation, sensation.<br>
+        <strong>Key organs:</strong> Skin.</p>
       </div>
       <div class="card">
         <h3>Reproductive System</h3>
-        <p>Produces gametes and supports the development of offspring.</p>
+        <p><strong>Anatomy:</strong> Gonads, ducts, external genitalia (male/female).<br>
+        <strong>Functions:</strong> Gamete production, hormone secretion, support of offspring.<br>
+        <strong>Key organs:</strong> Testes / ovaries.</p>
       </div>
     </div>
   </section>
@@ -75,5 +102,13 @@
   <footer>
     <p>HUMANVERSE — Body Systems</p>
   </footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      if (html.dataset.theme === 'light') { html.dataset.theme = 'dark'; btn.textContent = 'Light'; }
+      else { html.dataset.theme = 'light'; btn.textContent = 'Dark'; }
+    }
+  </script>
 </body>
 </html>

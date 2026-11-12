@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About HUMANVERSE — mission, methodology, and educational purpose.">
   <title>About — HUMANVERSE</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,11 +12,15 @@
     <div class="logo">HUMANVERSE</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="systems.html">Body Systems</a>
-      <a href="explorer.html">Anatomy Explorer</a>
+      <a href="systems.html">Systems</a>
+      <a href="explorer.html">Explorer</a>
       <a href="biochemistry.html">Biochemistry</a>
+      <a href="research.html">Research Lab</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="journal.html">Journal</a>
       <a href="about.html" class="active">About</a>
     </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
   </header>
 
   <section class="hero">
@@ -24,23 +29,35 @@
   </section>
 
   <section class="section">
-    <div class="card" style="max-width: 800px; margin: 0 auto;">
+    <div class="card" style="max-width:800px;margin:0 auto;">
       <h3>Mission</h3>
       <p>HUMANVERSE is an interactive educational platform dedicated to explaining how the human body works, how its systems function, and the chemical processes that sustain life.</p>
       <br>
       <h3>Purpose</h3>
-      <p>Created to demonstrate research skills, scientific communication, technical development, and independent learning. Intended for university portfolio presentation.</p>
+      <p>Created to demonstrate scientific research skills, biology and chemistry knowledge, digital product development, English scientific communication, and independent learning. Suitable for university portfolio presentation.</p>
       <br>
       <h3>Scientific Approach</h3>
-      <p>Content is based on established scientific sources (NCBI Bookshelf, OpenStax, MedlinePlus, WHO, PubMed). Facts, hypotheses, and interpretations are clearly distinguished. This is educational material, not medical advice.</p>
+      <p>Content is based on established open educational resources (NCBI Bookshelf, OpenStax, MedlinePlus, WHO, PubMed). Facts, hypotheses, and interpretations are clearly distinguished. This material is for educational purposes only and is not medical advice or a substitute for professional healthcare.</p>
       <br>
-      <h3>Development</h3>
-      <p>Phase 01: Foundation website with core pages and interactive SVG anatomy explorer. Future phases will include original research articles, quizzes, progress tracking, and 3D models.</p>
+      <h3>Current Status (Phase 02)</h3>
+      <p>Includes: full navigation, expanded body systems with anatomy/functions/organs, interactive anatomy explorer with search, biochemistry section, three literature-based research articles, interactive quiz with explanations, science journal, dark/light mode, SEO metadata, and responsive design.</p>
+      <br>
+      <h3>Future Improvements</h3>
+      <p>3D anatomy viewer, individual organ deep-dive pages, progress tracking, glossary, and additional original research.</p>
     </div>
   </section>
 
   <footer>
     <p>HUMANVERSE — Scientific Project</p>
+    <p style="font-size:0.8rem;margin-top:0.5rem;">© 2026 HUMANVERSE. Educational content. Sources credited on individual pages.</p>
   </footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      if (html.dataset.theme === 'light') { html.dataset.theme = 'dark'; btn.textContent = 'Light'; }
+      else { html.dataset.theme = 'light'; btn.textContent = 'Dark'; }
+    }
+  </script>
 </body>
 </html>

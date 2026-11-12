@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HUMANVERSE Research Lab — original literature-based scientific articles on human biology and biochemistry.">
+  <title>Research Lab — HUMANVERSE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">HUMANVERSE</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="systems.html">Systems</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="biochemistry.html">Biochemistry</a>
+      <a href="research.html" class="active">Research Lab</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+  </header>
+
+  <section class="hero">
+    <h1>Research Lab</h1>
+    <p>Original literature-based research articles. Each includes research question, methodology, findings, and references.</p>
+  </section>
+
+  <section class="section">
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Research 01 — The Chemistry of Human Bones</h3>
+      <p><strong>Research question:</strong> What is the molecular composition of bone matrix and how does mineralization occur?</p>
+      <p><strong>Methodology:</strong> Literature review of peer-reviewed sources (NCBI Bookshelf, OpenStax Anatomy & Physiology).</p>
+      <p><strong>Key findings:</strong> Bone matrix consists of ~70% inorganic hydroxyapatite [Ca₁₀(PO₄)₆(OH)₂] and ~30% organic collagen type I. Osteoblasts secrete osteoid which then mineralizes. Calcium and phosphate homeostasis is regulated by parathyroid hormone, calcitonin, and vitamin D.</p>
+      <p><strong>Limitations:</strong> Theoretical literature-based study; no original experimental data.</p>
+      <p><strong>References:</strong> OpenStax Anatomy & Physiology (2022); NCBI Bookshelf — Bone Histology.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1.5rem;">
+      <h3>Research 02 — How Blood Transports Oxygen</h3>
+      <p><strong>Research question:</strong> How does hemoglobin structure enable efficient oxygen binding and release?</p>
+      <p><strong>Methodology:</strong> Literature synthesis of respiratory physiology sources.</p>
+      <p><strong>Key findings:</strong> Hemoglobin is a tetramer (α₂β₂) with four heme groups. Cooperative binding produces the sigmoid oxygen-dissociation curve. Bohr effect (lower pH, higher CO₂) facilitates oxygen unloading in tissues. ~98.5% of oxygen is transported bound to hemoglobin.</p>
+      <p><strong>References:</strong> OpenStax Anatomy & Physiology; Guyton and Hall Textbook of Medical Physiology (selected chapters).</p>
+    </div>
+
+    <div class="card">
+      <h3>Research 03 — The Energy of Life (ATP & Mitochondria)</h3>
+      <p><strong>Research question:</strong> How do mitochondria generate the majority of cellular ATP?</p>
+      <p><strong>Methodology:</strong> Review of cellular respiration pathways from standard biochemistry texts.</p>
+      <p><strong>Key findings:</strong> Complete oxidation of one glucose yields ~30–32 ATP. The electron transport chain and oxidative phosphorylation in the inner mitochondrial membrane produce the majority. Proton gradient drives ATP synthase. Oxygen is the final electron acceptor.</p>
+      <p><strong>References:</strong> OpenStax Biology / Biochemistry; Lehninger Principles of Biochemistry (selected sections).</p>
+    </div>
+  </section>
+
+  <footer><p>HUMANVERSE — Research Lab (literature-based)</p></footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      if (html.dataset.theme === 'light') { html.dataset.theme = 'dark'; btn.textContent = 'Light'; }
+      else { html.dataset.theme = 'light'; btn.textContent = 'Dark'; }
+    }
+  </script>
+</body>
+</html>

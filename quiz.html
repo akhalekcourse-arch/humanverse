@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HUMANVERSE Knowledge Test — interactive quizzes on human biology and anatomy.">
+  <title>Knowledge Quiz — HUMANVERSE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo">HUMANVERSE</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="systems.html">Systems</a>
+      <a href="explorer.html">Explorer</a>
+      <a href="biochemistry.html">Biochemistry</a>
+      <a href="research.html">Research Lab</a>
+      <a href="quiz.html" class="active">Quiz</a>
+      <a href="journal.html">Journal</a>
+      <a href="about.html">About</a>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+  </header>
+
+  <section class="hero">
+    <h1>Knowledge Test</h1>
+    <p>Test your understanding of human biology. Answers and explanations appear after submission.</p>
+  </section>
+
+  <section class="section">
+    <div id="quiz-container">
+      <div class="quiz-question" data-correct="b">
+        <h4>1. Which organ pumps blood throughout the body?</h4>
+        <label class="option"><input type="radio" name="q1" value="a"> Lungs</label>
+        <label class="option"><input type="radio" name="q1" value="b"> Heart</label>
+        <label class="option"><input type="radio" name="q1" value="c"> Liver</label>
+        <label class="option"><input type="radio" name="q1" value="d"> Kidney</label>
+        <p class="explain" style="display:none;margin-top:0.5rem;color:var(--grey);">Correct: Heart. It has four chambers and maintains systemic and pulmonary circulation.</p>
+      </div>
+
+      <div class="quiz-question" data-correct="c">
+        <h4>2. What is the primary energy currency of the cell?</h4>
+        <label class="option"><input type="radio" name="q2" value="a"> Glucose</label>
+        <label class="option"><input type="radio" name="q2" value="b"> DNA</label>
+        <label class="option"><input type="radio" name="q2" value="c"> ATP</label>
+        <label class="option"><input type="radio" name="q2" value="d"> Hemoglobin</label>
+        <p class="explain" style="display:none;margin-top:0.5rem;color:var(--grey);">Correct: ATP (adenosine triphosphate). Produced mainly in mitochondria.</p>
+      </div>
+
+      <div class="quiz-question" data-correct="a">
+        <h4>3. Which system is responsible for gas exchange?</h4>
+        <label class="option"><input type="radio" name="q3" value="a"> Respiratory</label>
+        <label class="option"><input type="radio" name="q3" value="b"> Digestive</label>
+        <label class="option"><input type="radio" name="q3" value="c"> Endocrine</label>
+        <label class="option"><input type="radio" name="q3" value="d"> Urinary</label>
+        <p class="explain" style="display:none;margin-top:0.5rem;color:var(--grey);">Correct: Respiratory system. Alveoli in the lungs perform gas exchange.</p>
+      </div>
+
+      <div class="quiz-question" data-correct="d">
+        <h4>4. Hydroxyapatite is the main inorganic component of:</h4>
+        <label class="option"><input type="radio" name="q4" value="a"> Blood</label>
+        <label class="option"><input type="radio" name="q4" value="b"> Muscle</label>
+        <label class="option"><input type="radio" name="q4" value="c"> Skin</label>
+        <label class="option"><input type="radio" name="q4" value="d"> Bone</label>
+        <p class="explain" style="display:none;margin-top:0.5rem;color:var(--grey);">Correct: Bone. Hydroxyapatite [Ca₁₀(PO₄)₆(OH)₂] provides hardness.</p>
+      </div>
+
+      <button class="btn" onclick="submitQuiz()">Submit Answers</button>
+      <div id="score" class="score"></div>
+    </div>
+  </section>
+
+  <footer><p>HUMANVERSE — Knowledge Test</p></footer>
+
+  <script>
+    function submitQuiz() {
+      const questions = document.querySelectorAll('.quiz-question');
+      let correct = 0;
+      questions.forEach(q => {
+        const right = q.dataset.correct;
+        const selected = q.querySelector('input:checked');
+        const options = q.querySelectorAll('.option');
+        options.forEach(opt => {
+          opt.classList.remove('correct', 'wrong');
+          const val = opt.querySelector('input').value;
+          if (val === right) opt.classList.add('correct');
+          else if (selected && val === selected.value) opt.classList.add('wrong');
+        });
+        if (selected && selected.value === right) correct++;
+        q.querySelector('.explain').style.display = 'block';
+      });
+      document.getElementById('score').textContent = `Score: ${correct} / ${questions.length}`;
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      if (html.dataset.theme === 'light') { html.dataset.theme = 'dark'; btn.textContent = 'Light'; }
+      else { html.dataset.theme = 'light'; btn.textContent = 'Dark'; }
+    }
+  </script>
+</body>
+</html>

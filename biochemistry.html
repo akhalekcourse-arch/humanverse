@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Biochemistry of life — proteins, DNA, ATP, enzymes, hormones, and cellular energy.">
   <title>Biochemistry — HUMANVERSE</title>
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -11,57 +12,71 @@
     <div class="logo">HUMANVERSE</div>
     <nav>
       <a href="index.html">Home</a>
-      <a href="systems.html">Body Systems</a>
-      <a href="explorer.html">Anatomy Explorer</a>
+      <a href="systems.html">Systems</a>
+      <a href="explorer.html">Explorer</a>
       <a href="biochemistry.html" class="active">Biochemistry</a>
+      <a href="research.html">Research Lab</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="journal.html">Journal</a>
       <a href="about.html">About</a>
     </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
   </header>
 
   <section class="hero">
     <h1>Biochemistry</h1>
-    <p>The chemistry of life — molecules that sustain the human body.</p>
+    <p>The chemistry of life — molecules and reactions that sustain the human body.</p>
   </section>
 
   <section class="section">
     <div class="grid">
       <div class="card">
         <h3>Proteins</h3>
-        <p>Polymers of amino acids. Serve as enzymes, structural components, transporters, and signaling molecules.</p>
+        <p>Polymers of amino acids. Functions: enzymes, structural support (collagen), transport (hemoglobin), signaling, immune defense. Folding determines function.</p>
       </div>
       <div class="card">
         <h3>Carbohydrates</h3>
-        <p>Primary energy source. Include glucose, glycogen, and complex polysaccharides.</p>
+        <p>Primary energy source. Glucose is metabolized via glycolysis and the citric acid cycle. Glycogen is the storage form in liver and muscle.</p>
       </div>
       <div class="card">
         <h3>Lipids</h3>
-        <p>Fats and oils for energy storage, membrane structure, and hormone synthesis.</p>
+        <p>Fats, phospholipids, steroids. Energy storage, cell membrane structure, hormone precursors (steroid hormones), insulation.</p>
       </div>
       <div class="card">
         <h3>DNA & RNA</h3>
-        <p>Nucleic acids that store and transmit genetic information and direct protein synthesis.</p>
+        <p>DNA stores genetic information in the nucleus. RNA (mRNA, tRNA, rRNA) carries instructions and participates in protein synthesis (transcription and translation).</p>
       </div>
       <div class="card">
         <h3>Enzymes</h3>
-        <p>Biological catalysts that accelerate chemical reactions in cells without being consumed.</p>
+        <p>Biological catalysts that lower activation energy. Highly specific. Activity regulated by pH, temperature, inhibitors, and allosteric effectors.</p>
       </div>
       <div class="card">
         <h3>Hormones</h3>
-        <p>Chemical messengers produced by endocrine glands that regulate physiological processes.</p>
+        <p>Chemical messengers (peptide, steroid, amine). Produced by endocrine glands. Regulate metabolism, growth, reproduction, and stress responses.</p>
       </div>
       <div class="card">
         <h3>ATP & Cellular Energy</h3>
-        <p>Adenosine triphosphate — the universal energy currency of the cell, produced mainly in mitochondria.</p>
+        <p>Adenosine triphosphate is the universal energy currency. Produced mainly by oxidative phosphorylation in mitochondria. Hydrolysis powers cellular work.</p>
       </div>
       <div class="card">
-        <h3>Minerals & Vitamins</h3>
-        <p>Essential cofactors and micronutrients required for enzyme function and overall health.</p>
+        <h3>Vitamins & Minerals</h3>
+        <p>Essential micronutrients. Vitamins act as coenzymes; minerals (Ca, Fe, Na, K, Mg) serve structural and catalytic roles.</p>
+      </div>
+      <div class="card">
+        <h3>Cellular Respiration</h3>
+        <p>Process converting glucose + O₂ into CO₂, H₂O, and ATP. Stages: glycolysis, pyruvate oxidation, citric acid cycle, electron transport chain.</p>
       </div>
     </div>
   </section>
 
-  <footer>
-    <p>HUMANVERSE — Biochemistry of Life</p>
-  </footer>
+  <footer><p>HUMANVERSE — Biochemistry of Life</p></footer>
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn = document.querySelector('.theme-toggle');
+      if (html.dataset.theme === 'light') { html.dataset.theme = 'dark'; btn.textContent = 'Light'; }
+      else { html.dataset.theme = 'light'; btn.textContent = 'Dark'; }
+    }
+  </script>
 </body>
 </html>
