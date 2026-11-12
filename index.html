@@ -3,38 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HUMANVERSE — International educational platform explaining human anatomy, physiology, cellular biology and biochemistry through evidence-based resources.">
-  <meta name="keywords" content="human anatomy, physiology, biochemistry, biology education, medical education">
-  <title>HUMANVERSE — The Human Body, Explained Through Science</title>
+  <meta name="description" content="HUMANVERSE — Explore the science of the human body. Interactive educational platform for anatomy, physiology, cellular biology, and biochemistry.">
+  <title>HUMANVERSE — Explore the Science of the Human Body</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <div class="logo"><img src="logo.jpg" alt="HUMANVERSE logo" style="height:40px;vertical-align:middle;margin-right:8px;"> HUMANVERSE</div>
-    <nav>
+    <div class="logo"><img src="logo.jpg" alt="HUMANVERSE logo"> HUMANVERSE</div>
+    <nav class="desktop">
       <a href="index.html" class="active">Home</a>
       <a href="systems.html">Systems</a>
       <a href="explorer.html">Explorer</a>
       <a href="biochemistry.html">Biochemistry</a>
-      <a href="research.html">Research Lab</a>
+      <a href="research.html">Research</a>
       <a href="quiz.html">Quiz</a>
-      <a href="journal.html">Journal</a>
       <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
     </nav>
-    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+    <div class="header-actions">
+      <a href="signin.html" class="btn btn-outline">Sign In</a>
+      <button class="hamburger" onclick="toggleDrawer()" aria-label="Open menu">☰</button>
+    </div>
   </header>
 
-  <section class="hero" style="display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;text-align:left;padding:4rem 2rem;">
-    <div style="max-width:520px;">
-      <h1 style="font-size:2.8rem;line-height:1.15;background:none;-webkit-text-fill-color:var(--text);">THE HUMAN BODY,<br>EXPLAINED THROUGH SCIENCE.</h1>
-      <p style="font-size:1.2rem;margin:1.2rem 0;">Explore human anatomy, physiology, cellular biology and biochemistry through evidence-based educational resources and interactive learning experiences.</p>
+  <div class="overlay" id="overlay" onclick="toggleDrawer()"></div>
+  <div class="drawer" id="drawer">
+    <button onclick="toggleDrawer()" style="float:right;background:none;border:none;font-size:1.5rem;">✕</button>
+    <h3 style="margin:1rem 0;">Menu</h3>
+    <a href="index.html" onclick="toggleDrawer()">Home</a>
+    <a href="systems.html" onclick="toggleDrawer()">Body Systems</a>
+    <a href="explorer.html" onclick="toggleDrawer()">Anatomy Explorer</a>
+    <a href="biochemistry.html" onclick="toggleDrawer()">Biochemistry</a>
+    <a href="research.html" onclick="toggleDrawer()">Research Lab</a>
+    <a href="quiz.html" onclick="toggleDrawer()">Knowledge Test</a>
+    <a href="journal.html" onclick="toggleDrawer()">Science Journal</a>
+    <a href="about.html" onclick="toggleDrawer()">About</a>
+    <a href="signin.html" onclick="toggleDrawer()">Sign In</a>
+    <a href="signup.html" onclick="toggleDrawer()">Create Account</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Explore the Science of the Human Body.</h1>
+      <p>An interactive educational platform exploring human anatomy, physiology, cellular biology, and biochemistry through evidence-based resources.</p>
       <a href="systems.html" class="btn">Explore Body Systems</a>
-      <a href="explorer.html" class="btn btn-outline">Anatomy Explorer</a>
+      <a href="explorer.html" class="btn btn-outline" style="margin-left:0.5rem;">Anatomy Explorer</a>
     </div>
-    <div>
-      <img src="hero-anatomy.jpg" alt="Anatomical illustration of the human body showing major organs" style="max-width:320px;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,0.4);">
-    </div>
+    <img src="hero-anatomy.jpg" alt="Scientific anatomical illustration of the human body showing major organs">
   </section>
 
   <section class="section">
@@ -42,22 +56,22 @@
     <div class="grid">
       <div class="card">
         <h3>Body Systems</h3>
-        <p>All 11 major systems with structured overview, anatomy, functions, cellular and biochemical aspects, and scientific references.</p>
+        <p>All major organ systems with structured overviews, anatomy, functions, and scientific references.</p>
         <a href="systems.html">View systems →</a>
       </div>
       <div class="card">
         <h3>Anatomy Explorer</h3>
-        <p>Interactive 2D organ map with search. Select organs to view structure and function. (3D viewer planned.)</p>
+        <p>Interactive 2D organ map with search. Select regions to explore structure and function.</p>
         <a href="explorer.html">Open explorer →</a>
       </div>
       <div class="card">
         <h3>Biochemistry</h3>
-        <p>Molecular biology, metabolism, enzymes, cellular energy, and nutrition — with accurate scientific context.</p>
-        <a href="biochemistry.html">Study biochemistry →</a>
+        <p>Proteins, metabolism, enzymes, ATP, and molecular processes with accurate scientific context.</p>
+        <a href="biochemistry.html">Study →</a>
       </div>
       <div class="card">
         <h3>Research Lab</h3>
-        <p>Literature-based research articles following full academic structure with clear limitations and references.</p>
+        <p>Literature-based research articles with clear methodology, limitations, and references.</p>
         <a href="research.html">Read research →</a>
       </div>
     </div>
@@ -68,45 +82,38 @@
     <div class="grid">
       <div class="card">
         <h3>Chemistry of Human Bones</h3>
-        <p>Hydroxyapatite, collagen type I, and regulated mineralization processes.</p>
-        <a href="research.html">Read full article →</a>
+        <p>Hydroxyapatite, type I collagen, and regulated mineralization.</p>
+        <a href="research.html">Read →</a>
       </div>
       <div class="card">
-        <h3>Oxygen Transport by Blood</h3>
+        <h3>Oxygen Transport</h3>
         <p>Hemoglobin structure, cooperative binding, and the Bohr effect.</p>
-        <a href="research.html">Read full article →</a>
+        <a href="research.html">Read →</a>
       </div>
       <div class="card">
-        <h3>Cellular Energy: ATP</h3>
-        <p>Mitochondrial oxidative phosphorylation and ATP yield from glucose.</p>
-        <a href="research.html">Read full article →</a>
+        <h3>Cellular Energy</h3>
+        <p>Mitochondrial oxidative phosphorylation and ATP yield.</p>
+        <a href="research.html">Read →</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p><strong>HUMANVERSE</strong> — International Educational Platform on Human Biology & Biochemistry</p>
+    <p><strong>HUMANVERSE</strong> — Educational Platform on Human Biology & Biochemistry</p>
     <p>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy</a>
-      <a href="journal.html">Journal</a>
-      <a href="quiz.html">Quiz</a>
+      <a href="terms.html">Terms</a>
       <a href="https://github.com/akhalekcourse-arch/humanverse" target="_blank" rel="noopener">GitHub</a>
     </p>
-    <p style="margin-top:0.8rem;font-size:0.8rem;">Educational content only. Not medical advice. Sources include NCBI Bookshelf, OpenStax, and peer-reviewed literature. Image credits on respective pages.</p>
+    <p style="margin-top:0.8rem;font-size:0.8rem;">Educational content only. Not medical advice. Sources include NCBI Bookshelf and OpenStax.</p>
   </footer>
 
   <script>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const btn = document.querySelector('.theme-toggle');
-      if (html.dataset.theme === 'light') {
-        html.dataset.theme = 'dark';
-        btn.textContent = 'Light';
-      } else {
-        html.dataset.theme = 'light';
-        btn.textContent = 'Dark';
-      }
+    function toggleDrawer() {
+      document.getElementById('drawer').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+      document.body.style.overflow = document.getElementById('drawer').classList.contains('open') ? 'hidden' : '';
     }
   </script>
 </body>

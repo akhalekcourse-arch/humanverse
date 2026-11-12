@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account — HUMANVERSE</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="logo"><img src="logo.jpg" alt="HUMANVERSE logo"> HUMANVERSE</div>
+    <nav class="desktop"><a href="index.html">Home</a></nav>
+    <button class="hamburger" onclick="toggleDrawer()">☰</button>
+  </header>
+  <div class="overlay" id="overlay" onclick="toggleDrawer()"></div>
+  <div class="drawer" id="drawer">
+    <button onclick="toggleDrawer()" style="float:right;background:none;border:none;font-size:1.5rem;">✕</button>
+    <a href="index.html" onclick="toggleDrawer()">Home</a>
+    <a href="signin.html" onclick="toggleDrawer()">Sign In</a>
+  </div>
+
+  <div class="auth-box">
+    <h2>Create Account</h2>
+    <div class="note">
+      <strong>Configuration required:</strong> Supabase Auth must be connected. See signin.html note and auth.js for setup instructions.
+    </div>
+    <form id="signup-form">
+      <label>Full name</label>
+      <input type="text" id="name" required>
+      <label>Email address</label>
+      <input type="email" id="email" required>
+      <label>Password</label>
+      <input type="password" id="password" required minlength="8">
+      <label>Confirm password</label>
+      <input type="password" id="confirm" required>
+      <label style="display:flex;align-items:center;gap:0.5rem;margin-top:1rem;">
+        <input type="checkbox" required> I accept the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>
+      </label>
+      <button type="submit" class="btn" style="width:100%;margin-top:1rem;">Create Account</button>
+    </form>
+    <p style="margin-top:1rem;text-align:center;"><a href="signin.html">Already have an account? Sign in</a></p>
+    <div id="message" style="margin-top:1rem;font-size:0.9rem;"></div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    function toggleDrawer() {
+      document.getElementById('drawer').classList.toggle('open');
+      document.getElementById('overlay').classList.toggle('show');
+    }
+    document.getElementById('signup-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const msg = document.getElementById('message');
+      if (document.getElementById('password').value !== document.getElementById('confirm').value) {
+        msg.textContent = 'Passwords do not match.';
+        msg.style.color = '#B91C1C';
+        return;
+      }
+      msg.textContent = 'Supabase is not configured. Add your Project URL and anon key to auth.js.';
+      msg.style.color = '#B45309';
+    });
+  </script>
+</body>
+</html>
