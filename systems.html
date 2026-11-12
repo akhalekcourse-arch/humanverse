@@ -9,20 +9,34 @@
 </head>
 <body>
   <header>
-    <div class="logo"><img src="logo.jpg" alt="HUMANVERSE logo"> HUMANVERSE</div>
-    <nav>
+    <div class="logo"><img src="logo.jpg" alt="HUMANVERSE"> HUMANVERSE</div>
+    <nav class="desktop">
       <a href="index.html">Home</a>
-      <a href="systems.html" class="active">Systems</a>
+      <a href="systems.html">Systems</a>
       <a href="explorer.html">Explorer</a>
       <a href="biochemistry.html">Biochemistry</a>
-      <a href="research.html">Research Lab</a>
+      <a href="research.html">Research</a>
       <a href="quiz.html">Quiz</a>
-      <a href="journal.html">Journal</a>
-      <a href="about.html">About</a>
-      <a href="privacy.html">Privacy</a>
     </nav>
-    <button class="theme-toggle" onclick="toggleTheme()">Light</button>
+    <div class="header-right">
+      <a href="signin.html" class="btn btn-outline">Sign In</a>
+      <button class="hamburger" onclick="toggleDrawer()" aria-label="Menu">☰</button>
+    </div>
   </header>
+  <div class="overlay" id="overlay" onclick="toggleDrawer()"></div>
+  <aside class="drawer" id="drawer">
+    <button onclick="toggleDrawer()" style="float:right;background:none;border:none;font-size:1.4rem;">✕</button>
+    <div style="clear:both;padding-top:1rem;">
+      <a href="index.html" onclick="toggleDrawer()">Home</a>
+      <a href="systems.html" onclick="toggleDrawer()">Body Systems</a>
+      <a href="explorer.html" onclick="toggleDrawer()">Anatomy Explorer</a>
+      <a href="biochemistry.html" onclick="toggleDrawer()">Biochemistry</a>
+      <a href="research.html" onclick="toggleDrawer()">Research Lab</a>
+      <a href="quiz.html" onclick="toggleDrawer()">Knowledge Test</a>
+      <a href="about.html" onclick="toggleDrawer()">About</a>
+      <a href="signin.html" onclick="toggleDrawer()">Sign In</a>
+    </div>
+  </aside>
 
   <section class="hero">
     <h1>Human Body Systems</h1>
